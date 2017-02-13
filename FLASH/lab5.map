@@ -1,0 +1,658 @@
+*** EVALUATION ***
+PROGRAM "lab5.abs"
+
+*********************************************************************************************
+TARGET SECTION
+---------------------------------------------------------------------------------------------
+Processor   : Freescale HC08
+Memory Model: SMALL
+File Format : ELF\DWARF 2.0
+Linker      : SmartLinker V-5.0.49 Build 12319, Nov 15 2012
+
+*********************************************************************************************
+FILE SECTION
+---------------------------------------------------------------------------------------------
+MCUinit_asm.obj                         Model: SMALL,         Lang: Assembler
+main_asm.obj                            Model: SMALL,         Lang: Assembler
+
+*********************************************************************************************
+STARTUP SECTION
+---------------------------------------------------------------------------------------------
+Entry point: 0xE000 (_Startup)
+
+*********************************************************************************************
+SECTION-ALLOCATION SECTION
+Section Name                    Size  Type     From       To       Segment
+---------------------------------------------------------------------------------------------
+.data                              2   R/W      0x100      0x101   RAM
+.init                           2163     R     0xE000     0xE872   ROM
+MY_ZEROPAGE                       71   R/W       0x60       0xA6   Z_RAM
+MCUinit_asm__ORG00001              1     R     0xFFBD     0xFFBD   .absSeg0
+MCUinit_asm__ORG00002              1     R     0xFFBF     0xFFBF   .absSeg1
+MCUinit_asm__ORG00003             48     R     0xFFD0     0xFFFF   .absSeg2
+CODE_SECT                        132     R     0xE873     0xE8F6   ROM
+MY_DATA                          189     R     0xE8F7     0xE9B3   ROM
+.stack                            64   R/W      0x102      0x141   RAM
+
+Summary of section sizes per section type:
+READ_ONLY (R):         9E6 (dec:     2534)
+READ_WRITE (R/W):       89 (dec:      137)
+
+*********************************************************************************************
+VECTOR-ALLOCATION SECTION
+    Address     InitValue   InitFunction
+---------------------------------------------------------------------------------------------
+
+*********************************************************************************************
+OBJECT-ALLOCATION SECTION
+     Name               Module                 Addr   hSize   dSize     Ref    Section   RLIB
+---------------------------------------------------------------------------------------------
+MODULE:                 -- MCUinit_asm.obj --
+- PROCEDURES:
+     MCU_init                                  E873      26      38       1   CODE_SECT   
+     SkipTrim                                  E899      29      41       0   CODE_SECT   
+     isrVtpmovf                                E8C2      18      24       1   CODE_SECT   
+     tog1                                      E8DA       7       7       0   CODE_SECT   
+     end_tog                                   E8E1       D      13       0   CODE_SECT   
+     endISR                                    E8EE       1       1       0   CODE_SECT   
+     loop                                      E8EF       8       8       0   CODE_SECT   
+- VARIABLES:
+     hbstate                                    100       1       1       3   .data       
+     counter                                    101       1       1       4   .data       
+     VAR00001                                  FFBD       1       1       0   .text       
+     VAR00002                                  FFBF       1       1       0   .text       
+     VAR00003                                  FFD0       2       2       0   .text       
+     VAR00004                                  FFD2       2       2       0   .text       
+     VAR00005                                  FFD4       2       2       0   .text       
+     VAR00006                                  FFD6       2       2       0   .text       
+     VAR00007                                  FFD8       2       2       0   .text       
+     VAR00008                                  FFDA       2       2       0   .text       
+     VAR00009                                  FFDC       2       2       0   .text       
+     VAR00010                                  FFDE       2       2       0   .text       
+     VAR00011                                  FFE0       2       2       0   .text       
+     VAR00012                                  FFE2       2       2       0   .text       
+     VAR00013                                  FFE4       2       2       0   .text       
+     VAR00014                                  FFE6       2       2       0   .text       
+     VAR00015                                  FFE8       2       2       0   .text       
+     VAR00016                                  FFEA       2       2       0   .text       
+     VAR00017                                  FFEC       2       2       0   .text       
+     VAR00018                                  FFEE       2       2       0   .text       
+     VAR00019                                  FFF0       2       2       0   .text       
+     VAR00020                                  FFF2       2       2       0   .text       
+     VAR00021                                  FFF4       2       2       0   .text       
+     VAR00022                                  FFF6       2       2       0   .text       
+     VAR00023                                  FFF8       2       2       0   .text       
+     VAR00024                                  FFFA       2       2       0   .text       
+     VAR00025                                  FFFC       2       2       0   .text       
+     VAR00026                                  FFFE       2       2       0   .text       
+MODULE:                 -- main_asm.obj --
+- PROCEDURES:
+     _Startup                                  E000      5E      94       1   .init       
+     main                                      E000       0       0       0   .init       
+     InitLCD                                   E05E      6C     108       9   .init       
+     mainLoop                                  E0CA      1B      27       2   .init       
+     A_Loop                                    E0E5      2B      43       3   .init       
+     A_0_temp                                  E110       3       3       0   .init       
+     A_1_temp                                  E113       3       3       0   .init       
+     A_2_temp                                  E116       3       3       0   .init       
+     B_Loop                                    E119      4D      77       0   .init       
+     Regulate_Temp_B                           E166      30      48       0   .init       
+     HeatUp                                    E196      13      19       0   .init       
+     CoolDown                                  E1A9      13      19       0   .init       
+     A_0                                       E1BC      3D      61       1   .init       
+     A_1                                       E1F9      3F      63       1   .init       
+     A_2                                       E238      3F      63       1   .init       
+     Get_Time_Temp                             E277      AB     171       2   .init       
+     Kelvin                                    E322      4F      79       0   .init       
+     End_Time_Temp                             E371       4       4       0   .init       
+     ADD16_16                                  E375      1A      26       1   .init       
+     Display_Mode                              E38F      22      34       1   .init       
+     Out_Mode                                  E3B1       1       1       0   .init       
+     Display_State_A                           E3B2      1F      31       2   .init       
+     L0                                        E3B2       0       0       0   .init       
+     Out_L0                                    E3D1      37      55       0   .init       
+     L1                                        E408      22      34       0   .init       
+     Out_L1                                    E42A      1C      28       0   .init       
+     L2                                        E446      22      34       0   .init       
+     Out_L2                                    E468      1C      28       0   .init       
+     Display_Target_B                          E484      1F      31       1   .init       
+     L0_B                                      E484       0       0       0   .init       
+     Out_L0_B                                  E4A3       1       1       0   .init       
+     L1_B                                      E4A4      1F      31       0   .init       
+     Out_L1_B                                  E4C3       2       2       0   .init       
+     Display_State_Heat_B                      E4C5      1F      31       1   .init       
+     L2_B                                      E4C5       0       0       0   .init       
+     Out_L2_B                                  E4E4      1B      27       0   .init       
+     Display_State_Cool_B                      E4FF      1F      31       1   .init       
+     L3_B                                      E4FF       0       0       0   .init       
+     Out_L3_B                                  E51E      1B      27       0   .init       
+     Display_State_Hold_B                      E539      1F      31       1   .init       
+     L4_B                                      E539       0       0       0   .init       
+     Out_L4_B                                  E558      1B      27       0   .init       
+     L5_B                                      E573      22      34       3   .init       
+     Out_L5_B                                  E595      13      19       0   .init       
+     L6_B                                      E5A8      22      34       0   .init       
+     Out_L6_B                                  E5CA      1C      28       0   .init       
+     keyscan_loop                              E5E6      11      17       6   .init       
+     End2_temp                                 E5F7       3       3       0   .init       
+     scans                                     E5FA      7B     123       1   .init       
+     jump_1                                    E675       5       5       0   .init       
+     jump_2                                    E67A       5       5       0   .init       
+     jump_3                                    E67F       5       5       0   .init       
+     jump_A                                    E684       4       4       0   .init       
+     jump_4                                    E688       5       5       0   .init       
+     jump_5                                    E68D       5       5       0   .init       
+     jump_6                                    E692       5       5       0   .init       
+     jump_B                                    E697       4       4       0   .init       
+     jump_7                                    E69B       5       5       0   .init       
+     jump_8                                    E6A0       5       5       0   .init       
+     jump_9                                    E6A5       5       5       0   .init       
+     jump_C                                    E6AA       4       4       0   .init       
+     jump_0                                    E6AE       5       5       0   .init       
+     jump_D                                    E6B3       4       4       0   .init       
+     jump_E                                    E6B7       5       5       0   .init       
+     jump_F                                    E6BC       4       4       0   .init       
+     endISR                                    E6C0      24      36      10   .init       
+     End2                                      E6E4       9       9       1   .init       
+     Start_Tx                                  E6ED       8       8       4   .init       
+     SendIt                                    E6F5      21      33       1   .init       
+     I2CTxByte                                 E716       5       5       7   .init       
+     I2CNextBit                                E71B       F      15       0   .init       
+     SendLow                                   E72A       A      10       0   .init       
+     I2CTxCont                                 E734       8       8       0   .init       
+     I2CAckPoll1                               E73C      14      20       0   .init       
+     I2CNoAck1                                 E750       5       5       0   .init       
+     Start_Rx                                  E755      27      39       2   .init       
+     Receive_Data                              E77C       C      12       0   .init       
+     I2CRx                                     E788      1D      29       0   .init       
+     EndByte                                   E7A5       7       7       0   .init       
+     Continue                                  E7AC       A      10       0   .init       
+     EndData                                   E7B6      1E      30       0   .init       
+     I2CAckPoll2                               E7D4      14      20       1   .init       
+     I2CNoAck                                  E7E8       5       5       1   .init       
+     I2CStartBit                               E7ED       8       8       3   .init       
+     I2CStopBit                                E7F5       A      10       2   .init       
+     I2CSetupDelay                             E7FF       3       3       5   .init       
+     I2CBitDelay                               E802      16      22      11   .init       
+     write_char                                E818      1C      28      23   .init       
+     Delay_short                               E834       4       4      25   .init       
+     short_center                              E838       6       6       0   .init       
+     Delay_Sub                                 E83E       4       4       3   .init       
+     outer                                     E842       6       6       0   .init       
+     inner                                     E848       2       2       0   .init       
+     center                                    E84A       9       9       0   .init       
+     all_done                                  E853       3       3       0   .init       
+     LCD_WRITE                                 E856      1D      29      36   .init       
+- VARIABLES:
+     slave_address_r                             60       1       1       3   MY_ZEROPAGE 
+     slave_address_w                             61       1       1       9   MY_ZEROPAGE 
+     data_out                                    62       1       1       0   MY_ZEROPAGE 
+     BitCounter                                  63       1       1       3   MY_ZEROPAGE 
+     BitCounter2                                 64       1       1       3   MY_ZEROPAGE 
+     keypad_num                                  65       1       1       8   MY_ZEROPAGE 
+     DateTime                                    66       C      12       0   MY_ZEROPAGE 
+     DateTime_in                                 72       4       4       5   MY_ZEROPAGE 
+     Seconds_in                                  76       1       1       3   MY_ZEROPAGE 
+     Minutes_in                                  77       1       1       2   MY_ZEROPAGE 
+     Seconds_out                                 78       1       1       6   MY_ZEROPAGE 
+     Minutes_out                                 79       1       1       6   MY_ZEROPAGE 
+     write_num                                   7A       1       1      25   MY_ZEROPAGE 
+     Date_Counter                                7B       1       1       0   MY_ZEROPAGE 
+     DateTime_Counter                            7C       1       1       0   MY_ZEROPAGE 
+     temp                                        7D       1       1       5   MY_ZEROPAGE 
+     temp1                                       7E       2       2       0   MY_ZEROPAGE 
+     tempx                                       80       1       1       0   MY_ZEROPAGE 
+     ByteCounter                                 81       1       1       0   MY_ZEROPAGE 
+     D_TMSG1                                     82       1       1       0   MY_ZEROPAGE 
+     D_TMSG2                                     83       1       1       0   MY_ZEROPAGE 
+     D_DMSG1                                     84       1       1       0   MY_ZEROPAGE 
+     D_ENDMSG                                    85       1       1       0   MY_ZEROPAGE 
+     AState                                      86       6       6      30   MY_ZEROPAGE 
+     ATemp                                       8C       3       3      13   MY_ZEROPAGE 
+     ASec                                        8F       3       3      12   MY_ZEROPAGE 
+     Temp_high                                   92       1       1       8   MY_ZEROPAGE 
+     Temp_low                                    93       1       1      11   MY_ZEROPAGE 
+     hundreds                                    94       1       1       0   MY_ZEROPAGE 
+     tens                                        95       1       1       2   MY_ZEROPAGE 
+     ones                                        96       1       1       2   MY_ZEROPAGE 
+     NUM1L                                       97       1       1       2   MY_ZEROPAGE 
+     NUM1H                                       98       1       1       2   MY_ZEROPAGE 
+     NUM2L                                       99       1       1       2   MY_ZEROPAGE 
+     NUM2H                                       9A       1       1       2   MY_ZEROPAGE 
+     Result1                                     9B       1       1       1   MY_ZEROPAGE 
+     Result2                                     9C       1       1       2   MY_ZEROPAGE 
+     Result3                                     9D       1       1       2   MY_ZEROPAGE 
+     kelvin_temp                                 9E       2       2       6   MY_ZEROPAGE 
+     counter                                     A0       1       1       4   MY_ZEROPAGE 
+     value_selected                              A1       1       1       4   MY_ZEROPAGE 
+     keypress_cntr                               A2       1       1       1   MY_ZEROPAGE 
+     BMode                                       A3       1       1       6   MY_ZEROPAGE 
+     B_tens                                      A4       1       1       5   MY_ZEROPAGE 
+     B_ones                                      A5       1       1       7   MY_ZEROPAGE 
+     B_Target_Temp                               A6       1       1       2   MY_ZEROPAGE 
+     MODE_MSG                                  E8F7       A      10       2   MY_DATA     
+     VAR00001                                  E901       1       1       0   MY_DATA     
+     MODEA_MSG1                                E902       B      11       2   MY_DATA     
+     VAR00002                                  E90D       1       1       0   MY_DATA     
+     MODEA_MSG2                                E90E      1C      28       2   MY_DATA     
+     VAR00003                                  E92A       1       1       0   MY_DATA     
+     MODEA_MSG3                                E92B       5       5       2   MY_DATA     
+     VAR00004                                  E930       1       1       0   MY_DATA     
+     MODEB_MSG1                                E931       D      13       2   MY_DATA     
+     VAR00005                                  E93E       1       1       0   MY_DATA     
+     MODEB_MSG2                                E93F      21      33       2   MY_DATA     
+     VAR00006                                  E960       1       1       0   MY_DATA     
+     MODEB_MSG3                                E961       F      15       2   MY_DATA     
+     VAR00007                                  E970       1       1       0   MY_DATA     
+     MODEB_MSG4                                E971       F      15       2   MY_DATA     
+     VAR00008                                  E980       1       1       0   MY_DATA     
+     MODEB_MSG5                                E981      1C      28       2   MY_DATA     
+     VAR00009                                  E99D       1       1       0   MY_DATA     
+     MODEB_MSG6                                E99E       5       5       2   MY_DATA     
+     VAR00010                                  E9A3       1       1       0   MY_DATA     
+     MODEB_MSG7                                E9A4       F      15       2   MY_DATA     
+     VAR00011                                  E9B3       1       1       0   MY_DATA     
+- LABELS:
+     __SEG_END_SSTACK                           142       0       0       1               
+
+*********************************************************************************************
+MODULE STATISTIC
+  Name                                      Data   Code  Const
+---------------------------------------------------------------------------------------------
+  MCUinit_asm.obj                              2    132     50
+  main_asm.obj                                71   2163    189
+  other                                       64      0      0
+
+*********************************************************************************************
+SECTION USE IN OBJECT-ALLOCATION SECTION
+---------------------------------------------------------------------------------------------
+SECTION: ".text"
+  VAR00001 VAR00002 VAR00003 VAR00004 VAR00005 VAR00006 VAR00007 VAR00008 
+  VAR00009 VAR00010 VAR00011 VAR00012 VAR00013 VAR00014 VAR00015 VAR00016 
+  VAR00017 VAR00018 VAR00019 VAR00020 VAR00021 VAR00022 VAR00023 VAR00024 
+  VAR00025 VAR00026 
+SECTION: ".data"
+  hbstate counter 
+SECTION: ".init"
+  main _Startup InitLCD mainLoop A_Loop A_0_temp A_1_temp A_2_temp B_Loop 
+  Regulate_Temp_B HeatUp CoolDown A_0 A_1 A_2 Get_Time_Temp Kelvin 
+  End_Time_Temp ADD16_16 Display_Mode Out_Mode L0 Display_State_A Out_L0 L1 
+  Out_L1 L2 Out_L2 L0_B Display_Target_B Out_L0_B L1_B Out_L1_B L2_B 
+  Display_State_Heat_B Out_L2_B L3_B Display_State_Cool_B Out_L3_B L4_B 
+  Display_State_Hold_B Out_L4_B L5_B Out_L5_B L6_B Out_L6_B keyscan_loop 
+  End2_temp scans jump_1 jump_2 jump_3 jump_A jump_4 jump_5 jump_6 jump_B 
+  jump_7 jump_8 jump_9 jump_C jump_0 jump_D jump_E jump_F endISR End2 Start_Tx 
+  SendIt I2CTxByte I2CNextBit SendLow I2CTxCont I2CAckPoll1 I2CNoAck1 Start_Rx 
+  Receive_Data I2CRx EndByte Continue EndData I2CAckPoll2 I2CNoAck I2CStartBit 
+  I2CStopBit I2CSetupDelay I2CBitDelay write_char Delay_short short_center 
+  Delay_Sub outer inner center all_done LCD_WRITE 
+SECTION: "MY_ZEROPAGE"
+  slave_address_r slave_address_w data_out BitCounter BitCounter2 keypad_num 
+  DateTime DateTime_in Seconds_in Minutes_in Seconds_out Minutes_out write_num 
+  Date_Counter DateTime_Counter temp temp1 tempx ByteCounter D_TMSG1 D_TMSG2 
+  D_DMSG1 D_ENDMSG AState ATemp ASec Temp_high Temp_low hundreds tens ones 
+  NUM1L NUM1H NUM2L NUM2H Result1 Result2 Result3 kelvin_temp counter 
+  value_selected keypress_cntr BMode B_tens B_ones B_Target_Temp 
+SECTION: "CODE_SECT"
+  MCU_init SkipTrim isrVtpmovf tog1 end_tog endISR loop 
+SECTION: "MY_DATA"
+  MODE_MSG VAR00001 MODEA_MSG1 VAR00002 MODEA_MSG2 VAR00003 MODEA_MSG3 
+  VAR00004 MODEB_MSG1 VAR00005 MODEB_MSG2 VAR00006 MODEB_MSG3 VAR00007 
+  MODEB_MSG4 VAR00008 MODEB_MSG5 VAR00009 MODEB_MSG6 VAR00010 MODEB_MSG7 
+  VAR00011 
+
+*********************************************************************************************
+OBJECT LIST SORTED BY ADDRESS
+     Name                                      Addr   hSize   dSize     Ref    Section   RLIB
+---------------------------------------------------------------------------------------------
+     slave_address_r                             60       1       1       3   MY_ZEROPAGE 
+     slave_address_w                             61       1       1       9   MY_ZEROPAGE 
+     data_out                                    62       1       1       0   MY_ZEROPAGE 
+     BitCounter                                  63       1       1       3   MY_ZEROPAGE 
+     BitCounter2                                 64       1       1       3   MY_ZEROPAGE 
+     keypad_num                                  65       1       1       8   MY_ZEROPAGE 
+     DateTime                                    66       C      12       0   MY_ZEROPAGE 
+     DateTime_in                                 72       4       4       5   MY_ZEROPAGE 
+     Seconds_in                                  76       1       1       3   MY_ZEROPAGE 
+     Minutes_in                                  77       1       1       2   MY_ZEROPAGE 
+     Seconds_out                                 78       1       1       6   MY_ZEROPAGE 
+     Minutes_out                                 79       1       1       6   MY_ZEROPAGE 
+     write_num                                   7A       1       1      25   MY_ZEROPAGE 
+     Date_Counter                                7B       1       1       0   MY_ZEROPAGE 
+     DateTime_Counter                            7C       1       1       0   MY_ZEROPAGE 
+     temp                                        7D       1       1       5   MY_ZEROPAGE 
+     temp1                                       7E       2       2       0   MY_ZEROPAGE 
+     tempx                                       80       1       1       0   MY_ZEROPAGE 
+     ByteCounter                                 81       1       1       0   MY_ZEROPAGE 
+     D_TMSG1                                     82       1       1       0   MY_ZEROPAGE 
+     D_TMSG2                                     83       1       1       0   MY_ZEROPAGE 
+     D_DMSG1                                     84       1       1       0   MY_ZEROPAGE 
+     D_ENDMSG                                    85       1       1       0   MY_ZEROPAGE 
+     AState                                      86       6       6      30   MY_ZEROPAGE 
+     ATemp                                       8C       3       3      13   MY_ZEROPAGE 
+     ASec                                        8F       3       3      12   MY_ZEROPAGE 
+     Temp_high                                   92       1       1       8   MY_ZEROPAGE 
+     Temp_low                                    93       1       1      11   MY_ZEROPAGE 
+     hundreds                                    94       1       1       0   MY_ZEROPAGE 
+     tens                                        95       1       1       2   MY_ZEROPAGE 
+     ones                                        96       1       1       2   MY_ZEROPAGE 
+     NUM1L                                       97       1       1       2   MY_ZEROPAGE 
+     NUM1H                                       98       1       1       2   MY_ZEROPAGE 
+     NUM2L                                       99       1       1       2   MY_ZEROPAGE 
+     NUM2H                                       9A       1       1       2   MY_ZEROPAGE 
+     Result1                                     9B       1       1       1   MY_ZEROPAGE 
+     Result2                                     9C       1       1       2   MY_ZEROPAGE 
+     Result3                                     9D       1       1       2   MY_ZEROPAGE 
+     kelvin_temp                                 9E       2       2       6   MY_ZEROPAGE 
+     counter                                     A0       1       1       4   MY_ZEROPAGE 
+     value_selected                              A1       1       1       4   MY_ZEROPAGE 
+     keypress_cntr                               A2       1       1       1   MY_ZEROPAGE 
+     BMode                                       A3       1       1       6   MY_ZEROPAGE 
+     B_tens                                      A4       1       1       5   MY_ZEROPAGE 
+     B_ones                                      A5       1       1       7   MY_ZEROPAGE 
+     B_Target_Temp                               A6       1       1       2   MY_ZEROPAGE 
+     hbstate                                    100       1       1       3   .data       
+     counter                                    101       1       1       4   .data       
+     main                                      E000       0       0       0   .init       
+     _Startup                                  E000      5E      94       1   .init       
+     InitLCD                                   E05E      6C     108       9   .init       
+     mainLoop                                  E0CA      1B      27       2   .init       
+     A_Loop                                    E0E5      2B      43       3   .init       
+     A_0_temp                                  E110       3       3       0   .init       
+     A_1_temp                                  E113       3       3       0   .init       
+     A_2_temp                                  E116       3       3       0   .init       
+     B_Loop                                    E119      4D      77       0   .init       
+     Regulate_Temp_B                           E166      30      48       0   .init       
+     HeatUp                                    E196      13      19       0   .init       
+     CoolDown                                  E1A9      13      19       0   .init       
+     A_0                                       E1BC      3D      61       1   .init       
+     A_1                                       E1F9      3F      63       1   .init       
+     A_2                                       E238      3F      63       1   .init       
+     Get_Time_Temp                             E277      AB     171       2   .init       
+     Kelvin                                    E322      4F      79       0   .init       
+     End_Time_Temp                             E371       4       4       0   .init       
+     ADD16_16                                  E375      1A      26       1   .init       
+     Display_Mode                              E38F      22      34       1   .init       
+     Out_Mode                                  E3B1       1       1       0   .init       
+     L0                                        E3B2       0       0       0   .init       
+     Display_State_A                           E3B2      1F      31       2   .init       
+     Out_L0                                    E3D1      37      55       0   .init       
+     L1                                        E408      22      34       0   .init       
+     Out_L1                                    E42A      1C      28       0   .init       
+     L2                                        E446      22      34       0   .init       
+     Out_L2                                    E468      1C      28       0   .init       
+     L0_B                                      E484       0       0       0   .init       
+     Display_Target_B                          E484      1F      31       1   .init       
+     Out_L0_B                                  E4A3       1       1       0   .init       
+     L1_B                                      E4A4      1F      31       0   .init       
+     Out_L1_B                                  E4C3       2       2       0   .init       
+     L2_B                                      E4C5       0       0       0   .init       
+     Display_State_Heat_B                      E4C5      1F      31       1   .init       
+     Out_L2_B                                  E4E4      1B      27       0   .init       
+     L3_B                                      E4FF       0       0       0   .init       
+     Display_State_Cool_B                      E4FF      1F      31       1   .init       
+     Out_L3_B                                  E51E      1B      27       0   .init       
+     L4_B                                      E539       0       0       0   .init       
+     Display_State_Hold_B                      E539      1F      31       1   .init       
+     Out_L4_B                                  E558      1B      27       0   .init       
+     L5_B                                      E573      22      34       3   .init       
+     Out_L5_B                                  E595      13      19       0   .init       
+     L6_B                                      E5A8      22      34       0   .init       
+     Out_L6_B                                  E5CA      1C      28       0   .init       
+     keyscan_loop                              E5E6      11      17       6   .init       
+     End2_temp                                 E5F7       3       3       0   .init       
+     scans                                     E5FA      7B     123       1   .init       
+     jump_1                                    E675       5       5       0   .init       
+     jump_2                                    E67A       5       5       0   .init       
+     jump_3                                    E67F       5       5       0   .init       
+     jump_A                                    E684       4       4       0   .init       
+     jump_4                                    E688       5       5       0   .init       
+     jump_5                                    E68D       5       5       0   .init       
+     jump_6                                    E692       5       5       0   .init       
+     jump_B                                    E697       4       4       0   .init       
+     jump_7                                    E69B       5       5       0   .init       
+     jump_8                                    E6A0       5       5       0   .init       
+     jump_9                                    E6A5       5       5       0   .init       
+     jump_C                                    E6AA       4       4       0   .init       
+     jump_0                                    E6AE       5       5       0   .init       
+     jump_D                                    E6B3       4       4       0   .init       
+     jump_E                                    E6B7       5       5       0   .init       
+     jump_F                                    E6BC       4       4       0   .init       
+     endISR                                    E6C0      24      36      10   .init       
+     End2                                      E6E4       9       9       1   .init       
+     Start_Tx                                  E6ED       8       8       4   .init       
+     SendIt                                    E6F5      21      33       1   .init       
+     I2CTxByte                                 E716       5       5       7   .init       
+     I2CNextBit                                E71B       F      15       0   .init       
+     SendLow                                   E72A       A      10       0   .init       
+     I2CTxCont                                 E734       8       8       0   .init       
+     I2CAckPoll1                               E73C      14      20       0   .init       
+     I2CNoAck1                                 E750       5       5       0   .init       
+     Start_Rx                                  E755      27      39       2   .init       
+     Receive_Data                              E77C       C      12       0   .init       
+     I2CRx                                     E788      1D      29       0   .init       
+     EndByte                                   E7A5       7       7       0   .init       
+     Continue                                  E7AC       A      10       0   .init       
+     EndData                                   E7B6      1E      30       0   .init       
+     I2CAckPoll2                               E7D4      14      20       1   .init       
+     I2CNoAck                                  E7E8       5       5       1   .init       
+     I2CStartBit                               E7ED       8       8       3   .init       
+     I2CStopBit                                E7F5       A      10       2   .init       
+     I2CSetupDelay                             E7FF       3       3       5   .init       
+     I2CBitDelay                               E802      16      22      11   .init       
+     write_char                                E818      1C      28      23   .init       
+     Delay_short                               E834       4       4      25   .init       
+     short_center                              E838       6       6       0   .init       
+     Delay_Sub                                 E83E       4       4       3   .init       
+     outer                                     E842       6       6       0   .init       
+     inner                                     E848       2       2       0   .init       
+     center                                    E84A       9       9       0   .init       
+     all_done                                  E853       3       3       0   .init       
+     LCD_WRITE                                 E856      1D      29      36   .init       
+     MCU_init                                  E873      26      38       1   CODE_SECT   
+     SkipTrim                                  E899      29      41       0   CODE_SECT   
+     isrVtpmovf                                E8C2      18      24       1   CODE_SECT   
+     tog1                                      E8DA       7       7       0   CODE_SECT   
+     end_tog                                   E8E1       D      13       0   CODE_SECT   
+     endISR                                    E8EE       1       1       0   CODE_SECT   
+     loop                                      E8EF       8       8       0   CODE_SECT   
+     MODE_MSG                                  E8F7       A      10       2   MY_DATA     
+     VAR00001                                  E901       1       1       0   MY_DATA     
+     MODEA_MSG1                                E902       B      11       2   MY_DATA     
+     VAR00002                                  E90D       1       1       0   MY_DATA     
+     MODEA_MSG2                                E90E      1C      28       2   MY_DATA     
+     VAR00003                                  E92A       1       1       0   MY_DATA     
+     MODEA_MSG3                                E92B       5       5       2   MY_DATA     
+     VAR00004                                  E930       1       1       0   MY_DATA     
+     MODEB_MSG1                                E931       D      13       2   MY_DATA     
+     VAR00005                                  E93E       1       1       0   MY_DATA     
+     MODEB_MSG2                                E93F      21      33       2   MY_DATA     
+     VAR00006                                  E960       1       1       0   MY_DATA     
+     MODEB_MSG3                                E961       F      15       2   MY_DATA     
+     VAR00007                                  E970       1       1       0   MY_DATA     
+     MODEB_MSG4                                E971       F      15       2   MY_DATA     
+     VAR00008                                  E980       1       1       0   MY_DATA     
+     MODEB_MSG5                                E981      1C      28       2   MY_DATA     
+     VAR00009                                  E99D       1       1       0   MY_DATA     
+     MODEB_MSG6                                E99E       5       5       2   MY_DATA     
+     VAR00010                                  E9A3       1       1       0   MY_DATA     
+     MODEB_MSG7                                E9A4       F      15       2   MY_DATA     
+     VAR00011                                  E9B3       1       1       0   MY_DATA     
+     VAR00001                                  FFBD       1       1       0   .text       
+     VAR00002                                  FFBF       1       1       0   .text       
+     VAR00003                                  FFD0       2       2       0   .text       
+     VAR00004                                  FFD2       2       2       0   .text       
+     VAR00005                                  FFD4       2       2       0   .text       
+     VAR00006                                  FFD6       2       2       0   .text       
+     VAR00007                                  FFD8       2       2       0   .text       
+     VAR00008                                  FFDA       2       2       0   .text       
+     VAR00009                                  FFDC       2       2       0   .text       
+     VAR00010                                  FFDE       2       2       0   .text       
+     VAR00011                                  FFE0       2       2       0   .text       
+     VAR00012                                  FFE2       2       2       0   .text       
+     VAR00013                                  FFE4       2       2       0   .text       
+     VAR00014                                  FFE6       2       2       0   .text       
+     VAR00015                                  FFE8       2       2       0   .text       
+     VAR00016                                  FFEA       2       2       0   .text       
+     VAR00017                                  FFEC       2       2       0   .text       
+     VAR00018                                  FFEE       2       2       0   .text       
+     VAR00019                                  FFF0       2       2       0   .text       
+     VAR00020                                  FFF2       2       2       0   .text       
+     VAR00021                                  FFF4       2       2       0   .text       
+     VAR00022                                  FFF6       2       2       0   .text       
+     VAR00023                                  FFF8       2       2       0   .text       
+     VAR00024                                  FFFA       2       2       0   .text       
+     VAR00025                                  FFFC       2       2       0   .text       
+     VAR00026                                  FFFE       2       2       0   .text       
+
+*********************************************************************************************
+UNUSED-OBJECTS SECTION
+---------------------------------------------------------------------------------------------
+
+*********************************************************************************************
+COPYDOWN SECTION
+---------------------------------------------------------------------------------------------
+
+*********************************************************************************************
+OBJECT-DEPENDENCIES SECTION
+---------------------------------------------------------------------------------------------
+_Startup                  USES __SEG_END_SSTACK AState ATemp ASec 
+                                value_selected BMode InitLCD MCU_init mainLoop 
+InitLCD                   USES Delay_short LCD_WRITE 
+mainLoop                  USES InitLCD Display_Mode counter keyscan_loop 
+                                keypad_num 
+A_Loop                    USES InitLCD Display_State_A counter keyscan_loop 
+                                keypad_num Get_Time_Temp Delay_Sub 
+A_0_temp                  USES A_0 
+A_1_temp                  USES A_1 
+A_2_temp                  USES A_2 
+B_Loop                    USES BMode InitLCD Display_Target_B keyscan_loop 
+                                keypad_num B_tens B_ones temp B_Target_Temp Seconds_out 
+                                Minutes_out slave_address_w Start_Tx 
+Regulate_Temp_B           USES BMode keyscan_loop Delay_Sub Get_Time_Temp 
+                                Temp_low B_Target_Temp InitLCD Display_State_Hold_B 
+HeatUp                    USES InitLCD Display_State_Heat_B 
+CoolDown                  USES InitLCD Display_State_Cool_B 
+A_0                       USES Seconds_out Minutes_out slave_address_w 
+                                Start_Tx AState value_selected A_Loop 
+A_1                       USES Seconds_out Minutes_out slave_address_w 
+                                Start_Tx AState value_selected A_Loop 
+A_2                       USES Seconds_out Minutes_out slave_address_w 
+                                Start_Tx AState value_selected A_Loop 
+Get_Time_Temp             USES slave_address_w slave_address_r Start_Rx 
+                                DateTime_in Seconds_in Minutes_in ASec Temp_high Temp_low 
+                                BMode tens ones ATemp 
+Kelvin                    USES NUM1H Temp_low NUM1L NUM2H NUM2L ADD16_16 
+                                Result2 kelvin_temp Result3 ATemp 
+ADD16_16                  USES NUM1L NUM2L Result3 NUM1H NUM2H Result2 Result1 
+Display_Mode              USES MODE_MSG LCD_WRITE Delay_short 
+Display_State_A           USES MODEA_MSG1 LCD_WRITE Delay_short 
+Out_L0                    USES AState write_num write_char 
+L1                        USES MODEA_MSG2 LCD_WRITE Delay_short 
+Out_L1                    USES ATemp write_num write_char 
+L2                        USES MODEA_MSG3 LCD_WRITE Delay_short 
+Out_L2                    USES ASec write_num write_char 
+Display_Target_B          USES MODEB_MSG1 LCD_WRITE Delay_short 
+L1_B                      USES MODEB_MSG2 LCD_WRITE Delay_short 
+Display_State_Heat_B      USES MODEB_MSG3 LCD_WRITE Delay_short 
+Out_L2_B                  USES B_tens write_num write_char B_ones L5_B 
+Display_State_Cool_B      USES MODEB_MSG4 LCD_WRITE Delay_short 
+Out_L3_B                  USES B_tens write_num write_char B_ones L5_B 
+Display_State_Hold_B      USES MODEB_MSG7 LCD_WRITE Delay_short 
+Out_L4_B                  USES B_tens write_num write_char B_ones L5_B 
+L5_B                      USES MODEB_MSG5 LCD_WRITE Delay_short 
+Out_L5_B                  USES ATemp write_num write_char 
+L6_B                      USES MODEB_MSG6 LCD_WRITE Delay_short 
+Out_L6_B                  USES ASec write_num write_char 
+keyscan_loop              USES BMode counter scans 
+End2_temp                 USES End2 
+scans                     USES keyscan_loop 
+jump_1                    USES endISR 
+jump_2                    USES endISR 
+jump_3                    USES endISR 
+jump_4                    USES endISR 
+jump_5                    USES endISR 
+jump_6                    USES endISR 
+jump_7                    USES endISR 
+jump_8                    USES endISR 
+jump_9                    USES endISR 
+jump_0                    USES endISR 
+jump_E                    USES mainLoop 
+endISR                    USES keypad_num LCD_WRITE Delay_Sub keypress_cntr 
+End2                      USES keypad_num InitLCD 
+Start_Tx                  USES BitCounter 
+SendIt                    USES I2CStartBit slave_address_w I2CTxByte 
+                                Seconds_out Minutes_out I2CStopBit I2CBitDelay 
+I2CTxByte                 USES BitCounter 
+I2CNextBit                USES I2CSetupDelay I2CBitDelay 
+SendLow                   USES I2CSetupDelay I2CBitDelay 
+I2CTxCont                 USES BitCounter 
+I2CAckPoll1               USES I2CSetupDelay I2CBitDelay 
+Start_Rx                  USES I2CStartBit slave_address_w I2CTxByte 
+                                slave_address_r 
+Receive_Data              USES BitCounter2 temp 
+I2CRx                     USES I2CBitDelay temp BitCounter2 
+EndByte                   USES DateTime_in 
+Continue                  USES I2CBitDelay I2CAckPoll2 
+EndData                   USES I2CNoAck I2CStopBit I2CBitDelay I2CSetupDelay 
+I2CAckPoll2               USES I2CSetupDelay I2CBitDelay 
+I2CStartBit               USES I2CBitDelay 
+I2CStopBit                USES I2CBitDelay 
+I2CBitDelay               USES slave_address_w Minutes_out Seconds_out SendIt 
+write_char                USES write_num LCD_WRITE Delay_short 
+LCD_WRITE                 USES Delay_short 
+isrVtpmovf                USES counter hbstate 
+tog1                      USES hbstate 
+end_tog                   USES counter 
+loop                      USES counter 
+
+*********************************************************************************************
+DEPENDENCY TREE
+*********************************************************************************************
+ main and _Startup Group
+ | 
+ +- main                
+ |    
+ +- _Startup            
+    | 
+    +- InitLCD             
+    |  | 
+    |  +- Delay_short         
+    |  |    
+    |  +- LCD_WRITE           
+    |     | 
+    |     +- Delay_short          (see above)
+    |        
+    +- MCU_init            
+    |    
+    +- mainLoop            
+       | 
+       +- InitLCD              (see above)
+       |  
+       +- Display_Mode        
+       |  | 
+       |  +- LCD_WRITE            (see above)
+       |  |  
+       |  +- Delay_short          (see above)
+       |     
+       +- keyscan_loop         (recursive dependency)
+          | 
+          +- scans                (recursive dependency)
+             | 
+             +- keyscan_loop         (see above) (recursive dependency)
+                
+ _ORG00003           
+ | 
+ +- isrVtpmovf          
+ |    
+ +- _Startup             (see above)
+    
+*********************************************************************************************
+STATISTIC SECTION
+---------------------------------------------------------------------------------------------
+
+ExeFile:
+--------
+Number of blocks to be downloaded: 5
+Total size of all blocks to be downloaded: 2534
+

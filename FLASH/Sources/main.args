@@ -1,0 +1,1 @@
+-Ms -I"$(ProjDirPath)/Project_Headers" -I"$(ProjDirPath)/Sources" -F2 -AsmDbg -ViewHidden -WmsgFob"%f%e:%l:%k:%d %m\n" -Cs08 
